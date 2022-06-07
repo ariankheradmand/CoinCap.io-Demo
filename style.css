@@ -1,0 +1,183 @@
+* ,
+*::before 
+,*::after {
+    box-sizing: border-box;
+    
+}
+main {
+    background-color: var(---bodycolor-tophead-white);
+}
+body {
+    padding: 0;
+    margin: auto;
+    font-family: 'Lato', sans-serif;
+    ---bodycolor-tophead-white : #eceff1;
+    ---liner-gradient : linear-gradient(to right, rgb(63, 81, 181), rgb(100, 181, 246)) rgb(255, 255, 255);
+    ---greenbotton :#18c683;
+    ---fontcolor : #fafefc;
+    ---black-color : black;
+    ---white-shadow: rgba(255, 255, 255,0.5);
+    ---hover-likns: rgba(0, 0, 0,0.02);
+}
+.row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.row-start {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+}
+.column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.column-flex-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.default-cnt {
+    max-width: 1150px;
+    width: 80%;
+}
+.full-size {
+    width: 100%;
+}
+#nav {
+    height: 64px;
+}
+#sticky {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background-color: #eceff1;
+    height: 64px;
+}
+.noberder-nobackground {
+    background-color: transparent;
+    border: 0px;
+}
+.button-color-st {
+    font-weight: 700;
+    border: 0px;
+    border-radius: 24px;
+
+    box-shadow: 4px 4px 7px 4px rgba(0, 0, 0, 0.1); ;
+
+    padding: 11px 20px ;
+    cursor: pointer;
+    background-color: var(---greenbotton);
+    color: var(---fontcolor);
+    transition: 0.15s ease-in-out;
+}
+.no-decor-black {
+   text-decoration: none;
+   color: var(---black-color) ;
+}
+.no-decor-white {
+    text-decoration: none;
+    color: var(---white-shadow) ;
+}
+.no-decor-white-bt {
+    text-decoration: none;
+    color: var(---bodycolor-tophead-white);
+}
+.fnt-wh {
+    font-size: 15px;
+    font-weight: 700;
+}
+.nav-button-left {
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    border: 0px;
+    padding: 0px 21px; 
+    cursor: pointer;
+}
+
+.nav-button-right {
+    padding: 0px 32px; 
+}
+/* end of header */
+.big-blue-box {
+  background: var(---liner-gradient);
+
+  height: 200px;
+  width: 100%;
+}
+.white-font {
+    position: relative;
+    top: 20px;
+    bottom: 20px;
+    text-align: center;
+    font-weight: 800;
+
+    color: var(---fontcolor);
+}
+.white-head-text {
+    color: var(---fontcolor);
+    font-weight: 800;
+}
+.numbers {
+    font-size: 21px
+}
+.tabel-style {
+    background-color: white;
+    border-spacing: 0px;
+    border: 1px solid inherit;
+    border-radius: 6px;
+    margin-top: -110px;
+    box-shadow: 4px 4px 32px 22px rgba(0, 0, 0, 0.1); ;
+    width: 60%;
+}
+.tabel-style thead th {
+    background-color:  var(---bodycolor-tophead-white);
+    padding: 0px 30px;
+    text-align: left;
+}
+.tabel-style tbody td {
+    padding: 25px 30px;
+    text-align: left;
+    border-top: 1px solid rgba(0 , 0 , 0 ,0.1);
+}
+.left_aling_numbers {
+    text-align: right;
+}
+.left-top {
+    border-top-left-radius: 6px ;
+}
+.left-right {
+    border-top-right-radius: 6px ;
+}
+.margin-bottom{
+    margin-bottom: 100px;
+}
+.four-slice-cnt {
+    width: 25%;
+}
+.padding-top-txt {
+    padding-top: 8px;
+}
+.padding-right-txt {
+    padding-right: 8px;
+}
+
+/* hovers */
+td:hover {
+    background-color: rgba(255, 255, 255,0.4);
+}
+.button-color-st:hover {
+    transform:  translateY(-5%)
+    
+}
+.nav-button-left:hover {
+    background-color: var(---hover-likns);
+
+}
