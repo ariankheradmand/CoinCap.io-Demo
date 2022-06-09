@@ -16,6 +16,7 @@ body {
     ---greenbotton :#18c683;
     ---fontcolor : #fafefc;
     ---black-color : black;
+    ---black-shadow-color : rgba(0 , 0 , 0 ,0.9);
     ---white-shadow: rgba(255, 255, 255,0.5);
     ---hover-likns: rgba(0, 0, 0,0.02);
 }
@@ -45,7 +46,7 @@ body {
 }
 
 .default-cnt {
-    max-width: 1150px;
+    max-width: 1050px;
     width: 80%;
 }
 .full-size {
@@ -98,7 +99,7 @@ body {
     font-family: 'Lato', sans-serif;
     height: 100%;
     border: 0px;
-    padding: 0px 21px; 
+    padding-right: 7px;
     cursor: pointer;
 }
 
@@ -135,11 +136,12 @@ body {
     border-radius: 6px;
     margin-top: -110px;
     box-shadow: 4px 4px 32px 22px rgba(0, 0, 0, 0.1); ;
-    width: 60%;
+    max-width: 1050;
+    width: 100%;
 }
 .tabel-style thead th {
     background-color:  var(---bodycolor-tophead-white);
-    padding: 0px 30px;
+    padding: 15px 30px;
     text-align: left;
 }
 .tabel-style tbody td {
@@ -168,8 +170,40 @@ body {
 .padding-right-txt {
     padding-right: 8px;
 }
+.symbol-name-table {
+    font-size: 12px;
+    color: var(---black-shadow-color);
+}
+.th-size {
+    min-width: 150px;
+    height: 45px;
+    font-size: 14px;
+}
+.name-style {
+    cursor: pointer;
+}
+.name-style:hover {
+    text-decoration: underline;
+}
+p {
+    color: var(---white-shadow);
+}
+svg {
+    fill: var(---white-shadow)
+}
+nav div:nth-child(1) ,nav div:nth-child(2) ,nav div:nth-child(4) {
+    width: 33.33333%;
+}
 
 /* hovers */
+svg:hover {
+    fill: white;
+    transition: 0.2s ease-in-out;
+}
+.no-decor-white:hover {
+    color: var(---fontcolor);
+    transition: 0.2s ease-in-out;
+}
 td:hover {
     background-color: rgba(255, 255, 255,0.4);
 }
@@ -180,4 +214,96 @@ td:hover {
 .nav-button-left:hover {
     background-color: var(---hover-likns);
 
+}
+.green {
+    background-color: rgb(92, 160, 92);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.red {
+    background-color: rgb(179, 33, 33);
+    width: 15px;
+    height: 15px;
+     border-radius: 50%;
+}
+/* -------------------------*/
+/* .nav-cnt.active {
+    display: block;
+    height: 100%;
+    width: 50%;
+    margin-right: 70%;
+    left: 100%;
+}
+.hamburger-menu-cnt.active {
+    background-color: #18c683;
+}
+.nav-menu.active {
+    
+}
+.js-block {
+    display: none;
+} */
+/* -------------------------*/
+.hamburger {
+    display: none;
+    width: 33.333333%;
+}
+.bar {
+    background-color: var(---black-color);
+    max-width: 17px;
+    height: 3px;
+    margin: 3px auto;
+    margin-right: 30px;
+}
+.display-block {
+    display: block;
+} 
+.display-none-defult {
+    display: none;
+} 
+.nav-menu {
+    position: fixed;
+    left: -100%;
+    gap: 0;
+    width: 100%;
+    text-align: center;
+    transition: 0.3;
+}
+@media(max-width:768px){
+    .hamburger {
+        display: block;
+        float: right;
+    }
+    .display-none {
+        display: none;
+    } 
+    .display-none-defult {
+        display: block;
+    }
+    
+    /* .center-image {
+        margin-left: 43%;
+    } */
+    td:nth-child(6) ,td:nth-child(6) , th:nth-child(5) , th:nth-child(6) {
+        display: none;
+    }
+    .default-cnt {
+        width: 95%;
+    }
+    .nav-button-right {
+    padding: 0px;
+    }
+    .res-column {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .res-column div {
+        padding: 2px 0px;
+        width: 150px;
+        max-height: 70px;
+    }
+    .tabel-style {
+        margin-top: -45px;
+    }
 }
