@@ -19,6 +19,7 @@ body {
     ---black-shadow-color : rgba(0 , 0 , 0 ,0.9);
     ---white-shadow: rgba(255, 255, 255,0.5);
     ---hover-likns: rgba(0, 0, 0,0.02);
+    ---border-color:rgba(0,0,0,10%);
 }
 .row-center {
     display: flex;
@@ -44,9 +45,103 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-
+.tb1-sizing {
+    width: 10%;
+}
+.tb2-sizing {
+    width: 25%;
+}
+.tb-ot-sizing {
+    width: 11.666666%;
+}
+.padding-t-b {
+    padding: 8px 0px;
+}
+.tb-border {
+    border-bottom: 1px solid var(---border-color);
+}
+.max-width-p1 {
+    max-width: 50px;
+}
+.max-width-p2 {
+    max-width: 150px;
+}
+.text-align-center {
+ text-align: center;
+}
+.text-align-right {
+    text-align: right;
+   }
+.tabel-style {
+    background-color: white;
+    border: 1px solid inherit;
+    border-radius: 6px;
+    margin-top: -110px;
+    box-shadow: 4px 4px 32px 22px rgba(0, 0, 0, 0.1); ;
+}
+.st-modal {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    width: 450px;
+    height: 250px;
+}
+.modal-backgr {
+    top: 0;
+    left: 0;
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.border-bt {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.md-select {
+    border: 0;
+    background-color: transparent;
+}
+.hd-size {
+    min-height: 45px;
+}
+.bd-size {
+    min-height: 57px;
+}
+.padding {
+    padding: 0px 15px;
+}
+.rank-size {
+    width: 5%;
+}
+.name-size {
+    width: 20%;
+}
+.other-size {
+    width: 12.5%;
+    text-align: right;
+}
+.other-size-ex {
+    width: 15%;
+    text-align: right;
+}
+.text-aling-rt {
+    text-align: right;
+}
+.float {
+    float: right;
+}
 .default-cnt {
-    max-width: 1050px;
+    max-width: 1150px;
     width: 80%;
 }
 .full-size {
@@ -65,6 +160,9 @@ body {
 .noberder-nobackground {
     background-color: transparent;
     border: 0px;
+}
+.text-align-right {
+    text-align: right;
 }
 .button-color-st {
     font-weight: 700;
@@ -129,35 +227,7 @@ body {
 .numbers {
     font-size: 21px
 }
-.tabel-style {
-    background-color: white;
-    border-spacing: 0px;
-    border: 1px solid inherit;
-    border-radius: 6px;
-    margin-top: -110px;
-    box-shadow: 4px 4px 32px 22px rgba(0, 0, 0, 0.1); ;
-    max-width: 1050;
-    width: 100%;
-}
-.tabel-style thead th {
-    background-color:  var(---bodycolor-tophead-white);
-    padding: 15px 30px;
-    text-align: left;
-}
-.tabel-style tbody td {
-    padding: 25px 30px;
-    text-align: left;
-    border-top: 1px solid rgba(0 , 0 , 0 ,0.1);
-}
-.left_aling_numbers {
-    text-align: right;
-}
-.left-top {
-    border-top-left-radius: 6px ;
-}
-.left-right {
-    border-top-right-radius: 6px ;
-}
+
 .margin-bottom{
     margin-bottom: 100px;
 }
@@ -174,11 +244,7 @@ body {
     font-size: 12px;
     color: var(---black-shadow-color);
 }
-.th-size {
-    min-width: 150px;
-    height: 45px;
-    font-size: 14px;
-}
+
 .name-style {
     cursor: pointer;
 }

@@ -14,28 +14,73 @@
     <main class="column-center">
     <header class="full-size column-center" id="sticky">
          <nav class="default-cnt row-center" id="nav">
+
               <div class="display-none" >
                  <button class="nav-button-left"><a class="no-decor-black fnt-wh" href="index.html">Coins</a></button>
                  <button class="nav-button-left"><a class="no-decor-black fnt-wh" href="Exchanges.html">Exchanges</a></button>
-
               </div>
+              
               <div class="display-none-defult"> 
                 <button class="noberder-nobackground nav-button-right"> <img src="./assets/search-2906.svg" width="15px"> </button>
               </div>
+
               <div class="center-image">
                  <a><img  src="./assets/black.svg" width="80px" ></a>
               </div>
+
               <div class="row-center display-none">
                  <button class="noberder-nobackground nav-button-right"> <img src="./assets/search-2906.svg" width="15px"> </button>
-                 <button class="noberder-nobackground nav-button-right"> <img src="./assets/settings-8178.svg" width="15px"></button>
+                 <button class="noberder-nobackground nav-button-right setting-btn"> <img src="./assets/settings-8178.svg" width="15px"></button>
                  <button class="button-color-st "><a class="no-decor-white-bt" href="#">Connect Wallet</a></button>
               </div>
+              
               <div class="hamburger ">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
          </nav>
+         <div class="modal-backgr white-head-text">
+            <div class="st-modal column-center" >
+                <div class="row-center border-bt" style="width: 75%;">
+                    <div class="row-center">
+                    <img src="./assets/settings-8178.svg" width="35px">
+                    <h1>Setting</h1>
+                    </div>
+               <button id="close"><img src="./assets/close.svg" width="15px"></button>
+                </div>
+               <div class="row-center border-bt" style="width: 75%;">
+                   <p>Dark Mode</p>
+                   <input type="checkbox">
+               </div>
+               <div class="row-center border-bt" style="width: 75%;">
+                <p>Flash Price Indicators</p>
+                <input type="checkbox">
+            </div>
+            <div class="row-center border-bt" style="width: 75%;">
+                <p>USD</p>
+                <select class="md-select">
+                    <option value="Option 1"></option>
+                </select>
+            </div>
+            <div class="row-center border-bt" style="width: 75%;">
+                <p>English</p>
+                <select class="md-select">
+                    <option value="Option 1"></option>
+                </select>
+            </div>
+            <script>
+                const open = document.querySelector(".setting-btn");
+                const close = document.querySelector("#close");
+                const mod = document.querySelector(".modal-backgr");
+        
+                open.addEventListener('click' , () => {
+                   mod.classList.add('show');
+                })
+                close.addEventListener('click' , () => {
+                   mod.classList.remove('show');
+                })
+            </script>
          <!-- <div class="js-block nav-cnt">
          <div class="hamburger-menu-cnt">
              <div class="column-center">
@@ -59,6 +104,7 @@
                 <div>Coin</div>
             </div>
          </div>
+         
         </div> -->
     </header>
     <div class="big-blue-box column-center">
@@ -78,23 +124,25 @@
          </div>
     </div>
     
-    <table class=" tabel-style margin-bottom" >
-         <thead>
-             <tr>
-            <th class="left-top">Rank</th>
-            <th class="th-size">Name</th>
-            <th class="th-size">Price</th>
-            <th class="th-size">Market Cap</th>
-            <th class="th-size">VMAP(24Hr)</th>
-            <th class="th-size">Supply</th>
-            <th class="th-size">Volume(24Hr)</th>
-            <th class="left-right th-size">Change (24Hr)</th>
-        </tr>
-         </thead>
-         <tbody class="tbody-class fnt-wh">
-
-         </tbody>
-    </table> 
+    <div class="full-size column-center" style="font-weight: 800; font-size: 14px;margin-bottom: 45px;" >
+        <div class="default-cnt tabel-style">
+               <div>
+                   <div class="row-center hd-size tb-border">
+                  <div class="padding rank-size" >Rank</div>
+                  <div class="padding name-size" >Name</div>
+                  <div class="padding other-size" >Price</div>
+                  <div class="padding other-size" >Market Cap</div>
+                  <div class="padding other-size" >VMAP(24Hr)</div>
+                  <div class="padding other-size" >Supply</div>
+                  <div class="padding other-size" >Volume(24Hr)</div>
+                  <div class="padding other-size">Change (24Hr)</div>
+              </div>
+               </div>
+               <div class="tbody-class">
+      
+               </div>
+               </div>
+          </div> 
     <div class="big-blue-box column-center " style="height: 280px;">
     <footer class="row-start default-cnt" style="padding-top: 25px;">
         <div class="column-flex-start four-slice-cnt fnt-wh">
