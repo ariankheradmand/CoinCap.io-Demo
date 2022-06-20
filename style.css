@@ -28,6 +28,11 @@ body {
     justify-content: space-between;
     
 }
+.row-without-space {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .row-start {
     display: flex;
     flex-direction: row;

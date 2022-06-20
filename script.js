@@ -19,16 +19,23 @@ var moneyFormatter  = new Intl.NumberFormat();
 
 
   let cnt_name = document.createElement('div');
-  cnt_name.classList.add("padding","name-size");
+  cnt_name.classList.add("padding","name-size","row-without-space");
   let link_name = document.createElement('a');
   link_name.classList.add("name-style");
   let name = document.createElement('div');
   let symbol = document.createElement('div');
   symbol.classList.add("symbol-name-table");
 
+  symbol.textContent = item.symbol;
 
+  let img_data = symbol.textContent
+  img_data = img_data.toLowerCase();
+  
   let name_img = document.createElement('img');
+  name_img.setAttribute("src" , `https://assets.coincap.io/assets/icons/${img_data}@2x.png`);
+  name_img.setAttribute("width" , "28px");
 
+  console.log(name_img);
 
   let usdprice = document.createElement('div');
   usdprice.classList.add("padding","other-size");
@@ -61,6 +68,7 @@ var moneyFormatter  = new Intl.NumberFormat();
   listItems.appendChild(Trow_tabel);
   Trow_tabel.appendChild(rank);
   Trow_tabel.appendChild(cnt_name);
+  cnt_name.appendChild(name_img);
   cnt_name.appendChild(link_name);
   link_name.appendChild(name);
   link_name.appendChild(symbol);
