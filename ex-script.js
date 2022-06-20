@@ -9,8 +9,8 @@ function datalist (item) {
   let name = document.createElement('div'); // + 
   let trd_pairs = document.createElement('div'); // +
   let top_pair = document.createElement('div');
-  let volumeUsd24Hr = document.createElement('div');
-  let total = document.createElement('div');
+  
+  
   let status = document.createElement('div');
   let green = document.createElement("div")
   let red = document.createElement("div")
@@ -30,9 +30,21 @@ function datalist (item) {
   trd_pairs.classList.add("padding","other-size-ex");
   top_pair.textContent = item.exchangeId;
   top_pair.classList.add("padding","other-size-ex");
-  volumeUsd24Hr.textContent = moneyFormatter.format(Math.floor(item.volumeUsd))+ ("$");
+
+
+  let volumeUsd24Hr = document.createElement('div');
+  volumeUsd24Hr.textContent = item.volumeUsd
+  let volumeUsd24Hr_ed = volumeUsd24Hr.textContent;
+  let volumeUsd24Hr_ed_1 = numeral(volumeUsd24Hr_ed).format("$0,0.00a");
+  volumeUsd24Hr.textContent = volumeUsd24Hr_ed_1
   volumeUsd24Hr.classList.add("padding","other-size-ex");
-  total.textContent = moneyFormatter.format(Math.floor(item.percentTotalVolume))+ ("%");
+  
+
+  let total = document.createElement('div');
+  total.textContent = item.percentTotalVolume
+  let total_ed = total.textContent;
+  let total_ed_1 = numeral(total_ed).format("0,0.00")+("%");
+  total.textContent = total_ed_1
   total.classList.add("padding","other-size-ex");
   if (b === true) {
       status.appendChild(green);

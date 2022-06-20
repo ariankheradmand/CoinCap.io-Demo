@@ -50,6 +50,12 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
+.green-text {
+    color: #18c683;
+}
+.red-text {
+    color: red;
+}
 .tb1-sizing {
     width: 10%;
 }
@@ -123,7 +129,7 @@ body {
     min-height: 57px;
 }
 .padding {
-    padding: 0px 15px;
+    padding: 8px 15px;
 }
 .rank-size {
     width: 5%;

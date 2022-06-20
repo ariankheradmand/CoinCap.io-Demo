@@ -35,34 +35,70 @@ var moneyFormatter  = new Intl.NumberFormat();
   name_img.setAttribute("src" , `https://assets.coincap.io/assets/icons/${img_data}@2x.png`);
   name_img.setAttribute("width" , "28px");
 
-  console.log(name_img);
-
   let usdprice = document.createElement('div');
+  usdprice.textContent = item.priceUsd
+  let usdprice_ed = usdprice.textContent;
+  let usdprice_ed_1 = numeral(usdprice_ed).format("$0,0.00");
+  usdprice.textContent = usdprice_ed_1
   usdprice.classList.add("padding","other-size");
-
+  
 
   let marketcap = document.createElement('div');
+  marketcap.textContent = item.marketCapUsd
+  let marketcap_ed = marketcap.textContent;
+  let marketcap_ed_1 = numeral(marketcap_ed).format("$0,0.00a");
+  marketcap.textContent = marketcap_ed_1
   marketcap.classList.add("padding","other-size");
 
 
   let vwap24Hr = document.createElement('div');
+  vwap24Hr.textContent = item.vwap24Hr
+  let vwap24Hr_ed = vwap24Hr.textContent;
+  let vwap24Hr_ed_1 = numeral(vwap24Hr_ed).format("$0,0.00a");
+  vwap24Hr.textContent = vwap24Hr_ed_1
   vwap24Hr.classList.add("padding","other-size");
+
+
   let supply = document.createElement('div');
+  supply.textContent = item.supply
+  let supply_ed = supply.textContent;
+  let supply_ed_1 = numeral(supply_ed).format("$0,0.00a");
+  supply.textContent = supply_ed_1
   supply.classList.add("padding","other-size");
+
+
   let volumeUsd24Hr = document.createElement('div');
+  volumeUsd24Hr.textContent = item.volumeUsd24Hr
+  let volumeUsd24Hr_ed = volumeUsd24Hr.textContent;
+  let volumeUsd24Hr_ed_1 = numeral(volumeUsd24Hr_ed).format("$0,0.00a");
+  volumeUsd24Hr.textContent = volumeUsd24Hr_ed_1
   volumeUsd24Hr.classList.add("padding","other-size");
+
+
   let changePercent24Hr = document.createElement('div');
+  changePercent24Hr.textContent = item.changePercent24Hr
+  let changePercent24Hr_ed = changePercent24Hr.textContent;
+  function containsSpecialChars(str) {
+    const specialChars = /-/;
+    return specialChars.test(str);
+  }
+  if (containsSpecialChars(changePercent24Hr_ed) == true) {
+    changePercent24Hr.classList.add("padding","other-size","red-text");
+  }else {
+    changePercent24Hr.classList.add("padding","other-size","green-text");
+  }
+  let changePercent24Hr_ed_1 = numeral(changePercent24Hr_ed).format("0,0.00")+("%");
+  changePercent24Hr.textContent = changePercent24Hr_ed_1
   changePercent24Hr.classList.add("padding","other-size");
 
   rank.textContent = item.rank ;
   name.textContent = item.name;
   symbol.textContent = item.symbol;
-  usdprice.textContent = moneyFormatter.format(Math.floor(item.priceUsd))+ ("$");
-  marketcap.textContent = moneyFormatter.format(Math.floor(item.marketCapUsd))+ ("$");
-  vwap24Hr.textContent = moneyFormatter.format(Math.floor(item.vwap24Hr))+ ("$");
-  supply.textContent = moneyFormatter.format(Math.floor(item.supply))+ ("$");
-  volumeUsd24Hr.textContent = moneyFormatter.format(Math.floor(item.volumeUsd24Hr))+ ("$");
-  changePercent24Hr.textContent = moneyFormatter.format(item.changePercent24Hr) + ("%");
+  
+ 
+  
+  
+  
 
 
   listItems.appendChild(Trow_tabel);
