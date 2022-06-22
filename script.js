@@ -7,15 +7,19 @@
 //   nav_1.classList.toggle("active")
 //   nav_2.classList.toggle("active")
 // })
+
 let listItems = document.body.querySelector(".tbody-class")
-var moneyFormatter  = new Intl.NumberFormat();
+let button = document.body.querySelector(".more-bt")
+
  function datalist (item) {
   let Trow_tabel = document.createElement('div');
   Trow_tabel.classList.add("row-center","bd-size","tb-border",);
 
   let rank = document.createElement('div');
+  rank.textContent = item.rank;
   rank.classList.add("padding","rank-size","text-align-center");
-
+  let rank_ed = rank.textContent;
+  
 
 
   let cnt_name = document.createElement('div');
@@ -23,17 +27,20 @@ var moneyFormatter  = new Intl.NumberFormat();
   let link_name = document.createElement('a');
   link_name.classList.add("name-style");
   let name = document.createElement('div');
+
+
+
   let symbol = document.createElement('div');
   symbol.classList.add("symbol-name-table");
-
   symbol.textContent = item.symbol;
-
-  let img_data = symbol.textContent
+  
+  let img_data = symbol.textContent;
   img_data = img_data.toLowerCase();
   
   let name_img = document.createElement('img');
   name_img.setAttribute("src" , `https://assets.coincap.io/assets/icons/${img_data}@2x.png`);
   name_img.setAttribute("width" , "28px");
+
 
   let usdprice = document.createElement('div');
   usdprice.textContent = item.priceUsd
@@ -70,14 +77,15 @@ var moneyFormatter  = new Intl.NumberFormat();
   let volumeUsd24Hr = document.createElement('div');
   volumeUsd24Hr.textContent = item.volumeUsd24Hr
   let volumeUsd24Hr_ed = volumeUsd24Hr.textContent;
-  let volumeUsd24Hr_ed_1 = numeral(volumeUsd24Hr_ed).format("$0,0.00a");
-  volumeUsd24Hr.textContent = volumeUsd24Hr_ed_1
+  volumeUsd24Hr_ed = numeral(volumeUsd24Hr_ed).format("$0,0.00a");
+  volumeUsd24Hr.textContent = volumeUsd24Hr_ed
   volumeUsd24Hr.classList.add("padding","other-size");
 
 
   let changePercent24Hr = document.createElement('div');
   changePercent24Hr.textContent = item.changePercent24Hr
   let changePercent24Hr_ed = changePercent24Hr.textContent;
+  
   function containsSpecialChars(str) {
     const specialChars = /-/;
     return specialChars.test(str);
@@ -87,34 +95,59 @@ var moneyFormatter  = new Intl.NumberFormat();
   }else {
     changePercent24Hr.classList.add("padding","other-size","green-text");
   }
+
+  
   let changePercent24Hr_ed_1 = numeral(changePercent24Hr_ed).format("0,0.00")+("%");
   changePercent24Hr.textContent = changePercent24Hr_ed_1
   changePercent24Hr.classList.add("padding","other-size");
 
-  rank.textContent = item.rank ;
+ 
   name.textContent = item.name;
   symbol.textContent = item.symbol;
   
- 
+  
+  
+  add_number(20);
   
   
   
+   
+   button.addEventListener("click", () => {
+    let a = 20;
+    add_number(a + 20);
+    button.addEventListener("click", () => {
+      let a = 40;
+      add_number(a + 20);
+    button.addEventListener("click", () => {
+      let a = 60;
+      add_number(a + 20);
+      button.addEventListener("click", () => {
+        let a = 80;
+        add_number(a + 20);
+        })
+      })
+    })
+  })
+    
+    function add_number (items) {
+    if (rank_ed <= items ) {
+      
+      listItems.appendChild(Trow_tabel);
+      Trow_tabel.appendChild(rank);
+      Trow_tabel.appendChild(cnt_name);
+      cnt_name.appendChild(name_img);
+       cnt_name.appendChild(link_name);
+      link_name.appendChild(name);
+      link_name.appendChild(symbol);
+      Trow_tabel.appendChild(usdprice);
+      Trow_tabel.appendChild(marketcap);
+      Trow_tabel.appendChild(vwap24Hr);
+      Trow_tabel.appendChild(supply);
+      Trow_tabel.appendChild(volumeUsd24Hr);
+      Trow_tabel.appendChild(changePercent24Hr);
+    }
+  }
 
-
-  listItems.appendChild(Trow_tabel);
-  Trow_tabel.appendChild(rank);
-  Trow_tabel.appendChild(cnt_name);
-  cnt_name.appendChild(name_img);
-  cnt_name.appendChild(link_name);
-  link_name.appendChild(name);
-  link_name.appendChild(symbol);
-
-  Trow_tabel.appendChild(usdprice);
-  Trow_tabel.appendChild(marketcap);
-  Trow_tabel.appendChild(vwap24Hr);
-  Trow_tabel.appendChild(supply);
-  Trow_tabel.appendChild(volumeUsd24Hr);
-  Trow_tabel.appendChild(changePercent24Hr);
 }
 
 

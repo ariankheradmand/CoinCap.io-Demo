@@ -1,6 +1,7 @@
 let listItems = document.body.querySelector(".tbody-class")
 var moneyFormatter  = new Intl.NumberFormat();
 function datalist (item) {
+  
   let Trow_tabel = document.createElement('div'); // +
   Trow_tabel.classList.add("row-center","padding-t-b","tb-border",);
 
@@ -56,10 +57,6 @@ function datalist (item) {
     status.appendChild(red); 
     red.classList.add("red","float")
   }
-
-  
-
-
   listItems.appendChild(Trow_tabel);
   Trow_tabel.appendChild(rank);
   Trow_tabel.appendChild(name);
@@ -68,7 +65,12 @@ function datalist (item) {
   Trow_tabel.appendChild(volumeUsd24Hr);
   Trow_tabel.appendChild(total);
   Trow_tabel.appendChild(status);
+  
 }
+// let half_data = list.filter((item) => {
+//   return item.rank > 20 ;
+// });
+// console.log(half_data);
 
 fetch('https://api.coincap.io/v2/exchanges')
 .then (function (res) {
@@ -76,7 +78,8 @@ fetch('https://api.coincap.io/v2/exchanges')
 })
 .then (function (data){
   let file = data.data;
-  file.forEach(function (list){  
-    datalist(list);
+  file.forEach(function (list){ 
+    return datalist(list);
+    
   })
 });
